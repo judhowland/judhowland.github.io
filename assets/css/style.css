@@ -198,8 +198,10 @@ section {
 }
 
 .my-work-grid-wrapper {
-    display: flex;
+    display: grid;
     justify-content: space-around;
+    height: 400px;
+    width: 100%;
 }
 
 .my-work-grid-container {
@@ -215,7 +217,8 @@ section {
 .my-work-grid-item {
     padding: 20px 0;
     border: 2px solid var(--tertiary-color);
-    display: flex;
+    display: grid;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
     text-align: center;
@@ -361,12 +364,23 @@ section {
     .about-img h3, .about-img::after {
         display: none;
     }
+
+    .contact ul {
+        margin-top: 20px;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .contact ul li a {
+        font-size: 25px;
+    }
 }
 
 /* Media Query for Tablets and Smaller */
 @media screen and (max-width: 768px) {
     section {
         padding: 30px 15px;
+        flex-wrap: wrap;
     }
 
     .section-title {
@@ -376,18 +390,52 @@ section {
         text-align: center;
     }
 
+    .my-work {
+        justify-content: center;
+        position: relative;
+        text-align: center;
+    }
+
+    .my-work-grid-wrapper {
+        display: inline-block;
+        flex-wrap: wrap;
+        justify-content: center;
+        height: auto;
+        width: auto;
+        flex: 1;
+    }
+    
     .my-work-grid-container {
-        grid-template-columns: 1fr 1fr;
+        display: inline-block;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .my-work-grid-item {
+        display: block;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .my-work-grid-item.highlight {
-        grid-column: 1;
+            display: block;
+            flex-wrap: wrap;
+    }
+    
+    .my-work-grid-item.solvere {
+            display: block;
+            flex-wrap: wrap;
     }
 
-    .my-work-grid-item.howland-blog {
-        grid-column: 2
+    .my-work-grid-item.coming-soon-1 {
+        display: block;
+        flex-wrap: wrap;
     }
 
+    .my-work-grid-item.coming-soon-2 {
+            display: block;
+            flex-wrap: wrap;
+    }
 /* Media Query for Mobile Phones and Smaller */
 @media screen and (max-width: 575px) {
     .about {
